@@ -32,3 +32,14 @@ def preprocess(image_path: str) -> np.ndarray:
     
     return np.array(image)
 
+# 2 calcul de similatrité
+def compute_similarity(img1_path: str, img2_path: str):
+    
+    img1 = preprocess(img1_path)
+    img2 = preprocess(img2_path)
+    
+    similarity = compare_ssim(img1, img2, data_range=255)
+    
+    return similarity, img1, img2
+
+
